@@ -1,0 +1,14 @@
+push		2
+pop 		2
+neg		0
+not		0
+add		0
+sub		0
+and		0
+or		0
+eq		0
+gt		0
+lt		0
+label 		1
+if-goto 	1
+goto		1

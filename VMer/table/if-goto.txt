@@ -1,0 +1,5 @@
+@SP
+AM=M-1
+D=M
+~@label_?<@label_LABEL_NAME
+D;JNE

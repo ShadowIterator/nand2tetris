@@ -1,0 +1,4 @@
+slide 14 
+(actually true and false are stored as 0 and -1,respectively)
+should be
+(actually true and false are stored as -1 and 0,respectively)

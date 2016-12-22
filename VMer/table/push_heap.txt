@@ -1,0 +1,10 @@
+~@$<static_type
+D=M
+~@?<offset_address
+D=D+A
+A=D
+D=M
+@SP
+M=M+1
+A=M-1
+M=D

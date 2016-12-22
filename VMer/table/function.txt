@@ -1,0 +1,9 @@
+~(function_%)<function_name
+@SP
+D=M
+@LCL
+M=D
+~@?<lcl_num
+D=A
+@SP
+M=M+D
