@@ -1,0 +1,25 @@
+1.扫一遍所有文件中的函数，确定函数是
+	constructor
+	method
+	function
+中的哪一种(记录下它所在的类名和类型)
+
+2.每一个文件里面只有一个类，分别编译这些文件
+
+3.扫一遍这个文件中的所有VarDec，确定储存方式，并编号。
+
+4.编译这个类里面的所有函数
+//函数定义
+对于constructor，如果这个类里面有k个field类型变量，先用
+
+push constant k
+call Memory.alloc 1
+
+声明一段长度为k的空间，剩下部分和function的处理方式相同
+
+对于method和function，先扫一遍这个函数的VarDec部分，确定local变量的个数，类型并编号，扫一遍parameterlist确定argument的个数、类型并编号
+
+分别处理函数中的statements
+
+//函数调用
+如果调用的函数是method,this要当成一个参数入栈，constructor和function按照正常函数调用方式就好了

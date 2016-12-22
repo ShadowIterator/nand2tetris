@@ -1,0 +1,72 @@
+
+let Statement: £¨varName ([expression1]£¿) = expression2£©
+(if expression1 exists)
+{
+	push varName //varName should be replaced by "local x" or "statics x"
+	deal with expression1
+	add
+	deal with expression2
+	pop temp 0
+	pop pointer 1 //that pointer
+	push temp 0
+	pop that 0
+}
+(if not)
+{
+	deal with expression2
+	pop varName
+}
+
+do statement (do subroutineCall):
+	subroutineCall
+	pop temp 0
+
+subroutineCall(¡¡(varName/className.)functionName(arg1,arg2,...,argn) )£º
+(if functionName is method && varName exists)
+{	
+	push varName
+}
+if(functionName is method && varName doesn't exsist )
+{
+	push pointer 0 //this pointer
+}
+	push arg1
+	push arg2
+	.
+	.
+	.
+	push argn
+	call functionName/className.functionName n/n+1(functionName is or not "method")
+	
+subroutineDec( functionName(type arg1,type arg2,...type argn))
+/*
+	if functionName is "method" , U should number arg1 as #1,arg2 as #2,...,argn as #n (#0 is this pointer)
+	else number arg1 as #0,arg2 as #1,...,argn as #n-1
+	x stands for the number of field vars in the current class 
+	y stands for the number of local vars in the function
+*/
+
+	function className.functionName y
+(if functionName is "method")
+{
+	push argument 0
+	pop pointer 0
+}
+(if functionName is "constructor")
+{
+	push constant x
+	call Memory.alloc 1
+	pop pointer 0
+}
+	deal with statements
+//return (expression)
+(if expression exsists)
+{
+	deal with expression // notice that the keyword "this" should be replaced by "pointer 0"
+	return 
+}
+(if not)
+{
+	push constant 0
+	return 
+}

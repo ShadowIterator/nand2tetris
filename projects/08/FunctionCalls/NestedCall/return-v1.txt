@@ -1,0 +1,63 @@
+///ARG ->R15
+@ARG
+D=M
+@R15
+M=D
+///pop ->R13
+@SP
+AM=M-1
+D=M
+@R13
+M=D
+///SP=SP-lcl_num
+@0
+D=A
+@SP
+M=M-D
+///pop THAT
+@SP
+AM=M-1
+D=M
+@THAT
+M=D
+///pop THIS
+@SP
+AM=M-1
+D=M
+@THIS
+M=D
+///pop ARG
+@SP
+AM=M-1
+D=M
+@ARG
+M=D
+///pop LCL
+@SP
+AM=M-1
+D=M
+@LCL
+M=D
+///pop R14
+@SP
+AM=M-1
+D=M
+@R14
+M=D
+///R15 ->SP
+@R15
+D=M
+@SP
+M=D
+///push R13
+@R13
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+
+@R14
+A=M
+0;JMP
+
